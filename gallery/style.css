@@ -24,7 +24,11 @@ body {
     padding: 40px;
     height: 100vh;
     width: 100vw;
-    background-color: #800847;
+    background-image: url('png/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     overflow: auto;
     color: var(--tx1);
     font-family: Inter, sans-serif;
@@ -139,7 +143,7 @@ body {
     border-radius:12px;
     cursor:pointer;
     transition:.2s;
-    backdrop-filter: blur(10px); 
+    background:var(--bg2);
 }
 
 .folder:hover {
