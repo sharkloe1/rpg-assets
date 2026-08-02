@@ -79,13 +79,15 @@ async function loadFolder(path){
 
     const folders = files.filter(
         f => f.type === "dir"
-    );
+    )
+    .sort((a, b) => a.name.localeCompare(b.name, 'fr', { numeric: true, sensitivity: 'base' }));
 
     const images = files.filter(
         f =>
-        f.type === "file" &&
-        /\.(png|jpg|jpeg|webp|gif|svg)$/i.test(f.name)
-    );
+            f.type === "file" &&
+            /\.(png|jpg|jpeg|webp|gif|svg)$/i.test(f.name)
+    )
+    .sort((a, b) => a.name.localeCompare(b.name, 'fr', { numeric: true }));
     currentImages = images;
 
     showFolders(folders);
