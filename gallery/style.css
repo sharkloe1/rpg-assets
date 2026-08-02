@@ -12,7 +12,8 @@
     --bg2: #1d1d29;
     --bg3: #3a3a55;
     --bg4: #616a75;
-    --tx1: #d2d1c1;
+    --tx2: #d2d1c1;
+    --tx2: #000000;
 }
 
 * {
@@ -22,15 +23,69 @@
 body {
     margin: 0;
     padding: 40px;
-    background: var(--bg1);
-    color: var(--tx1);
+    height: 100vh;
+    width: 100vw;
+    background-image: url('png/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow: auto;
+    color: var(--tx2);
     font-family: Inter, sans-serif;
     height: 100vh;
 }
 
-h1 {
+.shark-header {
+    margin: auto;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.shark-header-top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.shark-informations {
+    font-size: 14px;
+    border: 1px solid var(--tx2);
+    width: 50%;
+    padding: 15px;
+    box-sizing: border-box;
+    min-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+.shark-title h1 {
     font-family: "Astone Nouvea";
     font-size: 42px;
+}
+
+.shark-avatar {
+    background-image: url('png/avatar.jpg');
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background-color: var(--bg3);
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--tx2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.shark-avatar:hover {
+    transform: scale(1.10);
 }
 
 .toolbar {
@@ -49,7 +104,7 @@ h1 {
 
 #back {
     padding: 10px 16px;
-    background: var(--tx1);
+    background: var(--tx2);
     border:1px solid #0a0605;
     border-radius: 8px;
     cursor: pointer;
@@ -63,7 +118,7 @@ h1 {
 
 #back:hover {
     background: var(--bg3);
-    color: var(--tx1);
+    color: var(--tx2);
 }
 
 .hidden {
@@ -85,11 +140,11 @@ h1 {
     width:160px;
     height:160px;
     padding:12px;
-    background:var(--bg2);
     border:1px solid var(--bg3);
     border-radius:12px;
     cursor:pointer;
     transition:.2s;
+    backdrop-filter: blur(10px);
 }
 
 .folder:hover {
@@ -100,7 +155,7 @@ h1 {
     margin-top:10px;
     text-align:center;
     font-size:14px;
-    color: var(--tx1);
+    color: var(--tx2);
 }
 
 .folder-icon {
@@ -139,7 +194,7 @@ h1 {
     justify-content: center;
     opacity: 0;
     background: rgba(13,17,23,.85);
-    color: var(--tx1);
+    color: var(--tx2);
     border: 1px solid var(--bg3);
     border-radius: 8px;
     cursor: pointer;
@@ -211,10 +266,10 @@ h1 {
     font-size: 24px;
     cursor: pointer;
     z-index: 10;
-    backdrop-filter: blur(10px);
     border: 1px solid var(--color1);
     transition: .2s;
     padding-bottom: 5px;
+    background:var(--bg2);
 }
 
 .prev{
