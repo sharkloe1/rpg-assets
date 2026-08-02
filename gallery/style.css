@@ -12,7 +12,8 @@
     --bg2: #1d1d29;
     --bg3: #3a3a55;
     --bg4: #616a75;
-    --tx1: #d2d1c1;
+    --tx2: #d2d1c1;
+    --tx2: #000000;
 }
 
 * {
@@ -30,7 +31,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     overflow: auto;
-    color: var(--tx1);
+    color: var(--tx2);
     font-family: Inter, sans-serif;
     height: 100vh;
 }
@@ -57,12 +58,12 @@ body {
 
 .shark-informations {
     font-size: 14px;
-    background-color: var(--bg3);
-    border: 3px solid var(--tx1);
+    border: 1px solid var(--tx2);
     width: 50%;
     padding: 15px;
     box-sizing: border-box;
     min-width: 400px;
+    backdrop-filter: blur(10px);
 }
 
 .shark-title h1 {
@@ -78,7 +79,7 @@ body {
     background-color: var(--bg3);
     background-size: cover;
     background-position: center;
-    border: 3px solid var(--tx1);
+    border: 3px solid var(--tx2);
     overflow: hidden;
     transition: transform 0.3s ease;
 }
@@ -103,7 +104,7 @@ body {
 
 #back {
     padding: 10px 16px;
-    background: var(--tx1);
+    background: var(--tx2);
     border:1px solid #0a0605;
     border-radius: 8px;
     cursor: pointer;
@@ -117,7 +118,7 @@ body {
 
 #back:hover {
     background: var(--bg3);
-    color: var(--tx1);
+    color: var(--tx2);
 }
 
 .hidden {
@@ -143,7 +144,7 @@ body {
     border-radius:12px;
     cursor:pointer;
     transition:.2s;
-    background:var(--bg2);
+    backdrop-filter: blur(10px);
 }
 
 .folder:hover {
@@ -154,7 +155,7 @@ body {
     margin-top:10px;
     text-align:center;
     font-size:14px;
-    color: var(--tx1);
+    color: var(--tx2);
 }
 
 .folder-icon {
@@ -193,7 +194,7 @@ body {
     justify-content: center;
     opacity: 0;
     background: rgba(13,17,23,.85);
-    color: var(--tx1);
+    color: var(--tx2);
     border: 1px solid var(--bg3);
     border-radius: 8px;
     cursor: pointer;
