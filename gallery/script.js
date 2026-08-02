@@ -1,5 +1,5 @@
-const USER="sharkloe-gallerie";
-const REPO="sharkloe.";
+const USER="sharkloe1";
+const REPO="gallery";
 const ROOT="assets";
  
 const gallery=document.getElementById("gallery");
