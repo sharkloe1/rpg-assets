@@ -76,7 +76,6 @@ function showImages(images){
 // charge un dossier
 async function loadFolder(path){
     gallery.innerHTML = "";
-    console.log(currentPath);
 
     const files = await getFolder(path);
     const search = searchInput.value.trim().toLowerCase();
@@ -124,14 +123,6 @@ back.onclick = ()=>{
 
 function updateList() {
     loadFolder(currentPath);
-    /*
-    if (history.length > 0) {
-        loadFolder(history[history.length-1]);
-    } else {
-        currentPath = ROOT;
-        history.push(ROOT);
-        loadFolder(ROOT);
-    }*/
 }
 
 
