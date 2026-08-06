@@ -13,8 +13,10 @@ let currentImageIndex = 0;
 const prevImage = document.getElementById("prevImage");
 const nextImage = document.getElementById("nextImage");
 const breadcrumb = document.getElementById("breadcrumb");
+const searchInput = document.getElementById("input-search");
+searchInput.addEventListener("input", updateList);
 
-// récupérer le contenu d'un dossier github
+
 async function getFolder(path){
     const url=`https://api.github.com/repos/${USER}/${REPO}/contents/${path}`;
     const res=await fetch(url);
@@ -76,15 +78,18 @@ async function loadFolder(path){
     gallery.innerHTML = "";
 
     const files = await getFolder(path);
+    const search = searchInput.value.trim().toLowerCase();
 
     const folders = files.filter(
-        f => f.type === "dir"
+        f => f.type === "dir" &&
+            f.name.toLowerCase().includes(search)
     )
     .sort((a, b) => a.name.localeCompare(b.name, 'fr', { numeric: true, sensitivity: 'base' }));
 
     const images = files.filter(
         f =>
-            f.type === "file" &&
+            f.type === "file"  &&
+            f.name.toLowerCase().includes(search) &&
             /\.(png|jpg|jpeg|webp|gif|svg)$/i.test(f.name)
     )
     .sort((a, b) => a.name.localeCompare(b.name, 'fr', { numeric: true }));
@@ -111,11 +116,15 @@ back.onclick = ()=>{
         loadFolder(currentPath);
     } else {
         currentPath = ROOT;
+        history.push(ROOT);
         loadFolder(ROOT);
     }
 };
 
-// ajoute le preview
+function updateList() {
+    loadFolder(currentPath);
+}
+
 
 const preview = document.getElementById("preview");
 const previewImage = document.getElementById("previewImage");
